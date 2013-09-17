@@ -1,0 +1,20 @@
+<div class="container">
+
+<h1>All users list</h1>
+<table class="table well">
+	<tr>
+		<th>User Name</th>
+		<th>Email</th>
+		<th>Action</th>
+
+	</tr>
+
+<% @users.each do |user| %>
+	<tr>
+		<td><%= user.name %></td>
+		<td><%= user.email %></td>
+		<td><%= link_to 'Comment', user_path(user) %></td>
+	</tr>
+<% end %>
+</table>
+</div><!--/.container-->
