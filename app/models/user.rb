@@ -1,18 +1,21 @@
 class User < ActiveRecord::Base
   attr_accessor :password
-  attr_accessible :name, :email, :password, :password_confirmation
+  attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
   has_many :comments, :dependent => :destroy #i didn't create a destroy button but leaving it in for future ref
   email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 
-  validates :name,		:presence 	=> true,
-  					:length		            => { :maximum => 50 }
-  validates :email,		:presence		=> true,
-  					:format		            => { :with => email_regex },
-           	:uniqueness 	        => { :case_sensitive => false }
+  validates :first_name,		:presence 	=> true,
+  					:length		                  => { :maximum => 50 }
+  validates :last_name,    :presence    => true,
+            :length                     => { :maximum => 50 }
 
-  validates :password, 	:presence => true,
-  	   			:confirmation 	      => true,
-  					:length			          => { :within => 6..40 }
+  validates :email,		:presence		      => true,
+  					:format		                  => { :with => email_regex },
+           	:uniqueness 	              => { :case_sensitive => false }
+
+  validates :password, 	:presence       => true,
+  	   			:confirmation 	            => true,
+  					:length			                => { :within => 6..40 }
 
   before_save :encrypt_password
 

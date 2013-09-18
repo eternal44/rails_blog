@@ -7048,3 +7048,508 @@ Served asset /application.js - 304 Not Modified (5ms)
 
 Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
 Served asset /bootstrap - 304 Not Modified (17ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130917192924)
+Migrating to CreateComments (20130917210504)
+Migrating to EditDb (20130918012656)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  CREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "email" varchar(255), "encrypted_password" varchar(255), "salt" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mSELECT * FROM "users"[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "altered_users" ("id","first_name","email","encrypted_password","salt","created_at","updated_at") VALUES (1, 'James', 'jamesyoun710@gmail.com', 'c8be34ecf981609ac163b897345ad93b96dfbb54f7ca845a2046d10f0d57a2ff', '91df882b4c14170f1f138654f417a291bb0add5420ad60c50a5990180b5bf0ea', '2013-09-17 19:53:32.862404', '2013-09-17 19:53:32.862404')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_users" ("id","first_name","email","encrypted_password","salt","created_at","updated_at") VALUES (2, 'Daniel', 'dtjsong@gmail.com', 'fdadb15a7b79c10a056722198c84f5790829d55535f4cbc6cecfef99ee79e31c', '648245696a282a545ad6c4ae1e5d4d87d613debe0947f9417884f0d073f4cda2', '2013-09-17 20:55:36.181284', '2013-09-17 20:55:36.181284')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "altered_users" ("id","first_name","email","encrypted_password","salt","created_at","updated_at") VALUES (3, 'Rosa', 'ryang@gmail.com', 'd7d3c0eba8d60f285c2166a9c88b7e38574e55b119bd4b41b27622f84f3ab4b1', 'e3308769664717f894f74e786f7038efa03a697e3809356d13aa99372c79275a', '2013-09-17 20:56:55.563816', '2013-09-17 20:56:55.563816')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "altered_users" ("id","first_name","email","encrypted_password","salt","created_at","updated_at") VALUES (4, 'Maggie', 'mappro@gmail.com', '5dca29724d177fdc5412146af7a4ebcc99db2e889d05c6f402add84ccee4436d', 'a7840297b84e462bce400dc244216d6bcea1856a59012dcff03398bfd8655e4a', '2013-09-17 20:58:04.323378', '2013-09-17 20:58:04.323378')[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "users"
+  [1m[36m (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "first_name" varchar(255), "email" varchar(255), "encrypted_password" varchar(255), "salt" varchar(255), "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  SELECT * FROM "altered_users"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","first_name","email","encrypted_password","salt","created_at","updated_at") VALUES (1, 'James', 'jamesyoun710@gmail.com', 'c8be34ecf981609ac163b897345ad93b96dfbb54f7ca845a2046d10f0d57a2ff', '91df882b4c14170f1f138654f417a291bb0add5420ad60c50a5990180b5bf0ea', '2013-09-17 19:53:32.862404', '2013-09-17 19:53:32.862404')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "users" ("id","first_name","email","encrypted_password","salt","created_at","updated_at") VALUES (2, 'Daniel', 'dtjsong@gmail.com', 'fdadb15a7b79c10a056722198c84f5790829d55535f4cbc6cecfef99ee79e31c', '648245696a282a545ad6c4ae1e5d4d87d613debe0947f9417884f0d073f4cda2', '2013-09-17 20:55:36.181284', '2013-09-17 20:55:36.181284')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "users" ("id","first_name","email","encrypted_password","salt","created_at","updated_at") VALUES (3, 'Rosa', 'ryang@gmail.com', 'd7d3c0eba8d60f285c2166a9c88b7e38574e55b119bd4b41b27622f84f3ab4b1', 'e3308769664717f894f74e786f7038efa03a697e3809356d13aa99372c79275a', '2013-09-17 20:56:55.563816', '2013-09-17 20:56:55.563816')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "users" ("id","first_name","email","encrypted_password","salt","created_at","updated_at") VALUES (4, 'Maggie', 'mappro@gmail.com', '5dca29724d177fdc5412146af7a4ebcc99db2e889d05c6f402add84ccee4436d', 'a7840297b84e462bce400dc244216d6bcea1856a59012dcff03398bfd8655e4a', '2013-09-17 20:58:04.323378', '2013-09-17 20:58:04.323378')
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "altered_users"[0m
+  [1m[35m (0.1ms)[0m  ALTER TABLE "users" ADD "password_confirmation" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130918012656')[0m
+  [1m[35m (200.0ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130917192924)
+Migrating to CreateComments (20130917210504)
+Migrating to EditDb (20130918012656)
+Migrating to AddLastName (20130918013227)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  ALTER TABLE "users" ADD "last_name" varchar(255)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130918013227')[0m
+  [1m[35m (314.7ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/users" for 127.0.0.1 at 2013-09-17 18:35:00 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (2.5ms)
+Completed 500 Internal Server Error in 58ms
+
+ActionView::Template::Error (undefined method `name' for #<User:0xb60c964c>):
+    11: 
+    12: <% @users.each do |user| %>
+    13: 	<tr>
+    14: 		<td><%= user.name %></td>
+    15: 		<td><%= user.email %></td>
+    16: 		<td><%= link_to 'Comment', user_path(user) %></td>
+    17: 	</tr>
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/views/users/index.html.erb&amp;line=14&amp;column=1">app/views/users/index.html.erb:14:in `block in _app_views_users_index_html_erb___851145270_86676070'</a>
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/views/users/index.html.erb&amp;line=12&amp;column=1">app/views/users/index.html.erb:12:in `each'</a>
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/views/users/index.html.erb&amp;line=12&amp;column=1">app/views/users/index.html.erb:12:in `_app_views_users_index_html_erb___851145270_86676070'</a>
+
+
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-09-17 18:35:29 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 3ms
+
+ActionView::Template::Error (undefined method `name' for #<User:0xb29d44c>):
+    11: 
+    12: <% @users.each do |user| %>
+    13: 	<tr>
+    14: 		<td><%= user.name %></td>
+    15: 		<td><%= user.email %></td>
+    16: 		<td><%= link_to 'Comment', user_path(user) %></td>
+    17: 	</tr>
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/views/users/index.html.erb&amp;line=14&amp;column=1">app/views/users/index.html.erb:14:in `block in _app_views_users_index_html_erb___851145270_86676070'</a>
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/views/users/index.html.erb&amp;line=12&amp;column=1">app/views/users/index.html.erb:12:in `each'</a>
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/views/users/index.html.erb&amp;line=12&amp;column=1">app/views/users/index.html.erb:12:in `_app_views_users_index_html_erb___851145270_86676070'</a>
+
+
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-09-17 18:38:28 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 78ms (Views: 65.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:38:28 -0700
+Served asset /application.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:38:28 -0700
+Served asset /users.css - 304 Not Modified (9ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:38:28 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:38:28 -0700
+Served asset /jquery.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:38:28 -0700
+Served asset /users.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:38:28 -0700
+Served asset /application.js - 304 Not Modified (34ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:38:28 -0700
+Served asset /bootstrap - 304 Not Modified (12ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-09-17 18:38:53 -0700
+Processing by UsersController#index as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" 
+  Rendered users/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 28ms (Views: 16.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:38:53 -0700
+Served asset /application.css - 304 Not Modified (35ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:38:53 -0700
+Served asset /users.css - 304 Not Modified (5ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:38:53 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:38:53 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:38:53 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:38:53 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:38:53 -0700
+Served asset /bootstrap - 304 Not Modified (1ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2013-09-17 18:39:00 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (41.7ms)
+Completed 200 OK in 60ms (Views: 52.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:39:00 -0700
+Served asset /application.css - 304 Not Modified (34ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:39:00 -0700
+Served asset /users.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:39:00 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:39:00 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:39:00 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:39:00 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:39:00 -0700
+Served asset /bootstrap - 304 Not Modified (1ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2013-09-17 18:39:04 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 53ms (Views: 44.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:39:04 -0700
+Served asset /users.css - 304 Not Modified (8ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:39:04 -0700
+Served asset /application.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:39:04 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:39:04 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:39:04 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:39:04 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:39:04 -0700
+Served asset /bootstrap - 304 Not Modified (21ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-09-17 18:39:08 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZQYeCwaU785SEKUodYd/9YRiWpvdLyRIqKzkufM8CQ=", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+Completed 500 Internal Server Error in 1ms
+
+ActiveModel::MassAssignmentSecurity::Error (Can't mass-assign protected attributes: first_name, last_name):
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/controllers/users_controller.rb&amp;line=7&amp;column=1">app/controllers/users_controller.rb:7:in `new'</a>
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/controllers/users_controller.rb&amp;line=7&amp;column=1">app/controllers/users_controller.rb:7:in `create'</a>
+
+
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (7.1ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2013-09-17 18:40:15 -0700
+Processing by UsersController#new as HTML
+  Rendered users/new.html.erb within layouts/application (21.1ms)
+Completed 200 OK in 71ms (Views: 55.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:40:15 -0700
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:40:15 -0700
+Served asset /users.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:15 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:15 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:15 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:15 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:40:15 -0700
+Served asset /bootstrap - 304 Not Modified (1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-09-17 18:40:17 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZQYeCwaU785SEKUodYd/9YRiWpvdLyRIqKzkufM8CQ=", "user"=>{"first_name"=>"", "last_name"=>"", "email"=>"", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.2ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('') LIMIT 1
+  [1m[36m (0.0ms)[0m  [1mrollback transaction[0m
+  Rendered users/new.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 64ms (Views: 16.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:40:17 -0700
+Served asset /application.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:17 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:40:17 -0700
+Served asset /users.css - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:17 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:17 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:40:17 -0700
+Served asset /bootstrap - 304 Not Modified (1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-09-17 18:40:36 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZQYeCwaU785SEKUodYd/9YRiWpvdLyRIqKzkufM8CQ=", "user"=>{"first_name"=>"Michael ", "last_name"=>"Jordan", "email"=>"jamesyoun710@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  begin transaction
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('jamesyoun710@gmail.com') LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+  Rendered users/new.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 53ms (Views: 35.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:40:36 -0700
+Served asset /users.css - 304 Not Modified (14ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:36 -0700
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:40:36 -0700
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:36 -0700
+Served asset /jquery.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:36 -0700
+Served asset /users.js - 304 Not Modified (24ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:36 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:40:36 -0700
+Served asset /bootstrap - 304 Not Modified (1ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZQYeCwaU785SEKUodYd/9YRiWpvdLyRIqKzkufM8CQ=", "user"=>{"first_name"=>"Michael ", "last_name"=>"Jordan", "email"=>"mjordan@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT 1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER('mjordan@gmail.com') LIMIT 1
+  [1m[36mSQL (1.6ms)[0m  [1mINSERT INTO "users" ("created_at", "email", "encrypted_password", "first_name", "last_name", "password_confirmation", "salt", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["created_at", Wed, 18 Sep 2013 01:40:50 UTC +00:00], ["email", "mjordan@gmail.com"], ["encrypted_password", "aa5d6b3f0a42978200cfc85b68654226dc1e49169a51091f34fe7bf57eafea3d"], ["first_name", "Michael "], ["last_name", "Jordan"], ["password_confirmation", nil], ["salt", "eaacb2b93eb60133a3e2f77f37686b4f69cff938169494ae9283c141e4cb92e9"], ["updated_at", Wed, 18 Sep 2013 01:40:50 UTC +00:00]]
+  [1m[35m (213.7ms)[0m  commit transaction
+Redirected to http://localhost:3000/signin
+Completed 302 Found in 224ms (ActiveRecord: 215.5ms)
+
+
+Started GET "/signin" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 25ms (Views: 16.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Served asset /users.css - 304 Not Modified (4ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:40:50 -0700
+Served asset /bootstrap - 304 Not Modified (0ms)
+
+
+Started POST "/sessions" for 127.0.0.1 at 2013-09-17 18:41:00 -0700
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NZQYeCwaU785SEKUodYd/9YRiWpvdLyRIqKzkufM8CQ=", "session"=>{"email"=>"mjordan@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Save Session"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."email" = 'mjordan@gmail.com' LIMIT 1[0m
+Redirected to http://localhost:3000/users/5
+Completed 302 Found in 9ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2013-09-17 18:41:00 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  Rendered users/show.html.erb within layouts/application (25.1ms)
+Completed 500 Internal Server Error in 37ms
+
+ActionView::Template::Error (undefined method `name' for #<User:0xaf83ae0>):
+    1: 
+    2: <div class="container">
+    3: 	<div class="row well">
+    4: <h1>Welcome <%= @user.name %></h1>
+    5: <table>
+    6: 	<tr>
+    7: 		<th>Author & Message</th>
+  <a href="txmt://open?url=file:///home/james/bin/learning_rails/adv_project/app/views/users/show.html.erb&amp;line=4&amp;column=1">app/views/users/show.html.erb:4:in `_app_views_users_show_html_erb___354877231_95069060'</a>
+
+
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_trace.erb (0.9ms)
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (0.8ms)
+  Rendered /home/james/.rvm/gems/ruby-2.0.0-p247@rails3.2.13/gems/actionpack-3.2.13/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.9ms)
+
+
+Started GET "/users/5" for 127.0.0.1 at 2013-09-17 18:41:17 -0700
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "5"]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", "5"]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."user_id" = 5 ORDER BY id ASC
+  Rendered users/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 60ms (Views: 43.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:41:17 -0700
+Served asset /application.css - 304 Not Modified (53ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:41:17 -0700
+Served asset /jquery.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:41:17 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:41:17 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:41:17 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:41:17 -0700
+Served asset /users.css - 304 Not Modified (3ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:41:17 -0700
+Served asset /bootstrap - 304 Not Modified (1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 44ms (Views: 32.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
+Served asset /application.css - 304 Not Modified (11ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
+Served asset /users.css - 304 Not Modified (6ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
+Served asset /application.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
+Served asset /jquery.js - 304 Not Modified (1ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
+Served asset /users.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
+Served asset /bootstrap - 304 Not Modified (28ms)
