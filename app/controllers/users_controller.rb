@@ -15,7 +15,6 @@ class UsersController < ApplicationController
 
   def show
   	@user = User.find(params[:id])
-    @comments = User.find(params[:id]).comments.order("id ASC")
   end
 
   def index

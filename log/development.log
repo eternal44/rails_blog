@@ -7553,3 +7553,67 @@ Served asset /users.js - 304 Not Modified (0ms)
 
 Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 18:41:24 -0700
 Served asset /bootstrap - 304 Not Modified (28ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130917192924)
+Migrating to CreateComments (20130917210504)
+Migrating to EditDb (20130918012656)
+Migrating to AddLastName (20130918013227)
+Migrating to DelComment (20130918015008)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130918015008')
+  [1m[36m (147.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateBlogs (20130918020943)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.4ms)[0m  [1mCREATE TABLE "blogs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130918020943')
+  [1m[36m (168.3ms)[0m  [1mcommit transaction[0m
+Migrating to CreatePosts (20130918021225)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.5ms)[0m  [1mCREATE TABLE "posts" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "content" text, "blog_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE INDEX "index_posts_on_blog_id" ON "posts" ("blog_id")
+  [1m[36m (0.3ms)[0m  [1mCREATE INDEX "index_posts_on_user_id" ON "posts" ("user_id")[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130918021225')
+  [1m[36m (167.1ms)[0m  [1mcommit transaction[0m
+Migrating to CreateOwners (20130918021321)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "owners" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "user_id" integer, "blog_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  CREATE INDEX "index_owners_on_user_id" ON "owners" ("user_id")
+  [1m[36m (0.3ms)[0m  [1mCREATE INDEX "index_owners_on_blog_id" ON "owners" ("blog_id")[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130918021321')
+  [1m[36m (167.8ms)[0m  [1mcommit transaction[0m
+Migrating to CreateMessages (20130918021413)
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36m (0.6ms)[0m  [1mCREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "author" varchar(255), "message" text, "post_id" integer, "user_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (0.3ms)[0m  CREATE INDEX "index_messages_on_post_id" ON "messages" ("post_id")
+  [1m[36m (0.3ms)[0m  [1mCREATE INDEX "index_messages_on_user_id" ON "messages" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20130918021413')
+  [1m[36m (175.3ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations" 
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Migrating to CreateUsers (20130917192924)
+Migrating to CreateComments (20130917210504)
+Migrating to EditDb (20130918012656)
+Migrating to AddLastName (20130918013227)
+Migrating to DelComment (20130918015008)
+Migrating to CreateBlogs (20130918020943)
+Migrating to CreatePosts (20130918021225)
+Migrating to CreateOwners (20130918021321)
+Migrating to CreateMessages (20130918021413)
+Migrating to DropCommentsTable (20130918023429)
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  DROP TABLE "comments"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20130918023429')[0m
+  [1m[35m (181.4ms)[0m  commit transaction
+  [1m[36m (0.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations" [0m
+Connecting to database specified by database.yml

@@ -1,7 +1,13 @@
 class User < ActiveRecord::Base
   attr_accessor :password
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation
-  has_many :comments, :dependent => :destroy #i didn't create a destroy button but leaving it in for future ref
+
+  has_many :messages, :dependent => :destroy
+  has_many :posts, :dependent => :destroy
+  has_many :owners, :dependent => :destroy
+  has_many :blogs, through: :owners, :dependent => :destroy
+  
+
   email_regex = /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]+)\z/i
 
   validates :first_name,		:presence 	=> true,

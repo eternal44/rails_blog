@@ -2,37 +2,7 @@
 <div class="container">
 	<div class="row well">
 <h1>Welcome <%= @user.first_name %></h1>
-<table>
-	<tr>
-		<th>Author & Message</th>
-		<th>Time Stamp</th>
-	</tr>
-<% @comments.each do |comment| %>
-	<tr>
-		<td><%= comment.author %>- <%= comment.message %></td>
-		<td><%= comment.created_at %></td>
-	</tr>
-<% end %>
-</table>
-</div><!--/.row-->
 
-<div class="row">
-<h2>Add a comment:</h2>
-<%= form_for([@user, @user.comments.build]) do |f| %>
-  <p>
-    <%= f.label :Author %><br />
-    <%= f.text_field :author %>
-  </p>
-  <p>
-    <%= f.label :Message %><br />
-    <%= f.text_area :message, :size => "30x10" %>
-  
-
-  </p>
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
 </div><!--/.row-->
 
 <%= link_to "All users", users_path %>
