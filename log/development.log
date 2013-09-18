@@ -6970,3 +6970,81 @@ Served asset /application.js - 304 Not Modified (2ms)
 
 Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 15:16:43 -0700
 Served asset /bootstrap - 304 Not Modified (1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/signin" for 127.0.0.1 at 2013-09-17 17:19:15 -0700
+Processing by SessionsController#new as HTML
+  Rendered sessions/new.html.erb within layouts/application (54.6ms)
+Completed 200 OK in 106ms (Views: 97.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 17:19:15 -0700
+Served asset /application.css - 200 OK (32ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 17:19:15 -0700
+Served asset /users.css - 200 OK (59ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 17:19:15 -0700
+Served asset /users.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 17:19:15 -0700
+Served asset /jquery.js - 304 Not Modified (4ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 17:19:15 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 17:19:15 -0700
+Served asset /application.js - 304 Not Modified (6ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 17:19:15 -0700
+Served asset /bootstrap - 304 Not Modified (15ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2013-09-17 17:19:28 -0700
+Served asset /rails.png - 304 Not Modified (52ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+
+
+Started GET "/users" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
+Processing by UsersController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" [0m
+  Rendered users/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 106ms (Views: 27.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/assets/application.css?body=1" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
+Served asset /application.css - 304 Not Modified (26ms)
+
+
+Started GET "/assets/users.css?body=1" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
+Served asset /users.css - 304 Not Modified (28ms)
+
+
+Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
+Served asset /jquery.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/users.js?body=1" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
+Served asset /users.js - 304 Not Modified (2ms)
+
+
+Started GET "/assets/jquery_ujs.js?body=1" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
+Served asset /jquery_ujs.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.js?body=1" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
+Served asset /application.js - 304 Not Modified (5ms)
+
+
+Started GET "/assets/bootstrap" for 127.0.0.1 at 2013-09-17 17:59:32 -0700
+Served asset /bootstrap - 304 Not Modified (17ms)
