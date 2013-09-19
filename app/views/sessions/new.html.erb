@@ -1,4 +1,8 @@
+<div class="container">
+<div class="pull-right"><%= link_to 'Sign Up', new_user_path %></div>
+
 <h1>Sign In</h1>
+
 
 <% if flash[:error] %>
 	<p><%= flash[:error] %></p>
@@ -9,3 +13,7 @@
   <%= f.input :password %>
   <%= f.button :submit %>
 <% end %>
+
+
+
+</div><!--container-->

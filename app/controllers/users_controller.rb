@@ -14,11 +14,15 @@ class UsersController < ApplicationController
   end
 
   def show
-  	@user = User.find(params[:id])
-  end
+    @user = User.find(params[:id])
+    @blogs = User.find(params[:id]).blogs.order("id ASC")
+
+ end
 
   def index
     @users = User.all
   end
 
 end
+
+

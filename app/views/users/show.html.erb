@@ -1,9 +1,34 @@
 
+
 <div class="container">
-	<div class="row well">
-<h1>Welcome <%= @user.first_name %></h1>
 
-</div><!--/.row-->
+<div class="well">
+	<div class="pull-right"><%= link_to 'Sign Out', signout_path %></div>
+	<h1><%= @user.first_name %>'s Blogs!</h1>
+</div>
 
-<%= link_to "All users", users_path %>
+<table class="table">
+	<tr>
+		<th>Blog Name</th>
+		<th>Description</th>
+		<th>Type</th>
+	</tr>
+
+<% @blogs.each do |blog| %>
+  
+	<tr>
+		<td><%= blog.name %></td>
+		<td><%= blog.description %></td>
+		<td><%= link_to 'See Posts', blog_post_path(@user) %></td>
+
+	</tr>
+<% end %>
+
+
+
+</table>
+
+<%= link_to 'Create blogs', new_blog_path %> |
+<%= link_to 'Back', users_path %>
+
 </div><!--/.container-->

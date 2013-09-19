@@ -1,0 +1,25 @@
+<div class="container">
+	<div class="well">
+	<div class="pull-right"><%= link_to 'Sign Out', signout_path %></div>
+
+<h1>Post title: <%= @post.title %></hi>
+
+	<h5>Content: </h5>
+	<p> <%= @post.content %> </p>
+	</div><!--/.well-->
+	<h5>Messages</h5>
+	<% @messages.each do |message| %>
+	<p><%= message.author %>: "<%= message.message %>" </p>
+	<% end %>
+
+<h2>Add a message:</h2>
+
+<%= simple_form_for ([@blog, @post, @message]) do |f| %>
+  <%= f.input :author %>
+  <%= f.input :message %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to 'See all blogs', blogs_path %> |
+<%= link_to 'Back', blog_path %>
+</div><!--/.container-->

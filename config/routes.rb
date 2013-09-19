@@ -1,10 +1,16 @@
 Login2::Application.routes.draw do
+
+
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
+  # resources :blogs
 
-  resources :users do
-    resources :comments
+  resources :blogs do
+    resources :posts do
+      resources :messages
+    end
   end
+  root :to => "sessions#new"
   
   match "/signup",  :to => 'users#new'
   match "/signin",  :to => 'sessions#new'

@@ -1,0 +1,26 @@
+<div class="container">
+	<h1>List of Blogs</h1>
+<table class="table">
+
+	<tr>
+		<th>Blog Name</th>
+		<th>Description</th>
+		<th>Action</th>
+	</tr>
+<% @blog.each do |blog| %>
+	<tr>
+		<td><%= blog.name %></td>
+		<td><%= blog.description %></td>
+		<td><%= link_to 'See Post', blog_post_path(blog) %> </td>
+	</tr>
+	<div class="offset2">
+
+
+	</div>
+<% end %>
+</table>
+
+<%= link_to 'See all blogs', blogs_path %> |
+<%= link_to 'Back', users_path %>
+
+</div><!--/.container-->

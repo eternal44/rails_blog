@@ -1,0 +1,10 @@
+<h1>Blogs#new</h1>
+<p>Find me in app/views/blogs/new.html.erb</p>
+
+<%= simple_form_for(@blog) do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.button :submit %>
+<% end %>
+
+<%= link_to "All users", users_path %>
